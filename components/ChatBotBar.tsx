@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const SakhiHeader: React.FC = () => {
   return (
@@ -19,13 +19,13 @@ export default SakhiHeader;
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
     padding: 15,
     backgroundColor: "transparent",
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "bold",
   },
 });

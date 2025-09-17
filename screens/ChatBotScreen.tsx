@@ -1,41 +1,42 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ChatBotBox from "../components/ChatBotBox";
-import ChatBotSakhiBar from "../components/ChatBotSakhiBar";
+import ChatBotBar from "../components/ChatBotBar";
+import ChatBotInput from "../components/ChatBotInput";
 import ChatBotWelcome from "../components/ChatBotWelcome";
+import ChatBotWidgets from "../components/ChatBotWidgets";
 
-
-const SakhiPage: React.FC = () => {
+const ChatBotScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={require("../assets/bg.png")} // 👈 add bg.png in assets
-        style={styles.bg}
-      >
-        <View style={styles.overlay}>
-          <ChatBotSakhiBar />
-          <ChatBotWelcome />
-          <ChatBotBox />
-        </View>
-      </ImageBackground>
+      source={require("../assets/bg.png")}
+      style={styles.bg}
+      resizeMode="cover"
+    >
+      <View style={styles.innerContainer}>
+        <ChatBotBar />
+        <ChatBotWelcome />
+        <ChatBotWidgets />
+        <ChatBotInput />
+      </View>
+    </ImageBackground>
     </SafeAreaView>
   );
 };
 
-export default SakhiPage;
+export default ChatBotScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   bg: {
     flex: 1,
-    resizeMode: "cover",
   },
-  overlay: {
+  innerContainer: {
     flex: 1,
-    backgroundColor: "rgba(255,255,255,0.9)", // light overlay
+    justifyContent: "space-between",
+    paddingBottom: 10,
   },
 });
