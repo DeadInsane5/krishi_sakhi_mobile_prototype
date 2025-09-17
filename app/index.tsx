@@ -1,4 +1,4 @@
-import ChatBotBox from "@/components/ChatBotBox";
+import AdvisoryPage from "@/screens/AdvisoryPage";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
@@ -7,7 +7,8 @@ const App = () => {
     <SafeAreaProvider>
       {/* <HomeScreen /> */}
       {/* <Chatbot /> */}
-      <ChatBotBox />
+      {/* <ChatBotBox /> */}
+      <AdvisoryPage/>
     </SafeAreaProvider>
   );
 };
