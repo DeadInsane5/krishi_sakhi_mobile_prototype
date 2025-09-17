@@ -1,31 +1,31 @@
+// components/ActivityBar.tsx
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const SakhiHeader: React.FC = () => {
+const ActivityBar: React.FC = () => {
   return (
-    <View style={styles.header}>
+    <View style={styles.container}>
       <TouchableOpacity>
         <Ionicons name="arrow-back" size={24} color="black" />
       </TouchableOpacity>
-      <Text style={styles.title}>Sakhi-AI</Text>
-      <View style={{ width: 24 }} /> 
+      <Text style={styles.title}>Your Activity</Text>
     </View>
   );
 };
 
-export default SakhiHeader;
-
 const styles = StyleSheet.create({
-  header: {
+  container: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     padding: 15,
-    backgroundColor: "transparent",
+    backgroundColor: "#f8f6ef",
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    marginLeft: 10,
   },
 });
+
+export default ActivityBar;
