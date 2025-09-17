@@ -8,43 +8,48 @@ const ProfileForm: React.FC = () => {
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [crop, setCrop] = useState("");
-    const [soil, setSoil] = useState("");
+    const [soilType, setSoilType] = useState("");
     const [irrigation, setIrrigation] = useState("");
-
     const [users, setUsers] = useState<any[]>([]);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await axios.get("http://10.209.15.249:3000/api/profile");
-        setUsers(res.data);
-      } catch (error) {
-        console.log("error fetching users", error);
-        Alert.alert("Error fetching users");
-      };
-    };
-    fetchUsers();
-  }, []);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const res = await axios.get("http://10.209.15.249:3000/api/profile");
+                setUsers(res.data);
+            } catch (error) {
+                console.log("error fetching users", error);
+                Alert.alert("Error fetching users");
+            };
+        };
+        fetchUsers();
+    }, []);
 
     const handleSubmit = async () => {
-    try {
-      const res = await axios.post("http://10.209.15.249:3000/api/profile", {name, location, crop, soil, irrigation});
-      Alert.alert("User created successfully");
-        setUsers([...users, res.data]);
-        setName("");
-        setLocation("");
-        setCrop("");
-        setSoil("");
-        setIrrigation("");
-    } catch (error) {
-      console.log("error creating user", error);
-      Alert.alert("Error creating user");
-    }
+        setLoading(true);
+        try {
+            const res = await axios.post("http://10.209.15.249:3000/api/profile", { name, location, crop, soilType, irrigation });
+            Alert.alert("User created successfully");
+            setUsers([...users, res.data]);
+            setName("");
+            setLocation("");
+            setCrop("");
+            setSoilType("");
+            setIrrigation("");
+        } catch (error) {
+            console.log("error creating user", error);
+            Alert.alert("Error creating user");
+        }
+        setLoading(false);
     };
 
 
     return (
         <SafeAreaView style={styles.outerContainer}>
+            {/* display loading indicator if loading */}
+            {loading && <Text style={{ textAlign: "center", marginTop: 10 }}>Loading...</Text>}
             <View style={styles.innerContainer}>
                 {/* Name */}
                 <View style={styles.labelRow}>
@@ -93,8 +98,8 @@ const ProfileForm: React.FC = () => {
                 <View style={styles.inputWrapper}>
                     <TextInput
                         style={styles.input}
-                        value={soil}
-                        onChangeText={setSoil}
+                        value={soilType}
+                        onChangeText={setSoilType}
                     />
                 </View>
 
@@ -112,8 +117,8 @@ const ProfileForm: React.FC = () => {
                 </View>
 
                 {/* Create Button */}
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttonText} onPress={() => handleSubmit()}>Create</Text>
+                <TouchableOpacity style={styles.button} onPress={() => handleSubmit()}>
+                    <Text style={styles.buttonText}>Create</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
