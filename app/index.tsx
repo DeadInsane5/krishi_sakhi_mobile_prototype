@@ -1,11 +1,13 @@
+import ChatBotBox from "@/components/ChatBotBox";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import HomeScreen from "@/screens/HomeScreen";
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      {/* <Chatbot /> */}
+      <ChatBotBox />
     </SafeAreaProvider>
   );
 };

@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const ActionButtons: React.FC = () => {
+const ChatBotBox: React.FC = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.box}>
@@ -23,7 +23,7 @@ const ActionButtons: React.FC = () => {
   );
 };
 
-export default ActionButtons;
+export default ChatBotBox;
 
 const styles = StyleSheet.create({
   container: {

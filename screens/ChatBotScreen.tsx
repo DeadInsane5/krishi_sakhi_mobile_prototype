@@ -1,27 +1,35 @@
 import React from "react";
-import { View, StyleSheet, ImageBackground } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import ChatBotBox from "../components/ChatBotBox";
 import ChatBotSakhiBar from "../components/ChatBotSakhiBar";
 import ChatBotWelcome from "../components/ChatBotWelcome";
-import ChatBotBox from "../components/ChatBotBox";
+
 
 const SakhiPage: React.FC = () => {
   return (
-    <ImageBackground
-      source={require("../assets/bg.png")} // 👈 add bg.png in assets
-      style={styles.bg}
-    >
-      <View style={styles.overlay}>
-        <ChatBotSakhiBar />
-        <ChatBotWelcome/>
-        <ChatBotBox />
-      </View>
-    </ImageBackground>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+        source={require("../assets/bg.png")} // 👈 add bg.png in assets
+        style={styles.bg}
+      >
+        <View style={styles.overlay}>
+          <ChatBotSakhiBar />
+          <ChatBotWelcome />
+          <ChatBotBox />
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
 
 export default SakhiPage;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   bg: {
     flex: 1,
     resizeMode: "cover",
