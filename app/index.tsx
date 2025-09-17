@@ -1,6 +1,9 @@
-import AdvisoryPage from "@/screens/AdvisoryPage";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+
+
+// If CreateTaskPage.tsx is inside app folder:
+import CreateTaskPage from "./TaskPage";
 
 const App = () => {
   return (
@@ -8,7 +11,12 @@ const App = () => {
       {/* <HomeScreen /> */}
       {/* <Chatbot /> */}
       {/* <ChatBotBox /> */}
-      <AdvisoryPage/>
+
+      {/* Existing page */}
+      
+
+      {/* Your new page */}
+      <CreateTaskPage />
     </SafeAreaProvider>
   );
 };
