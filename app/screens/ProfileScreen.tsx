@@ -1,8 +1,8 @@
+import ProfileBar from "@/components/ProfileBar";
+import ProfileForm from "@/components/ProfileForm";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ProfileBar from "../components/ProfileBar";
-import ProfileForm from "../components/ProfileForm";
 
 const ProfileScreen: React.FC = () => {
   return (

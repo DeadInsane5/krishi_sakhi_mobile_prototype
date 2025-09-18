@@ -16,7 +16,7 @@ export default function LangSelect() {
           </View>
           <View style={styles.containerCol}>
             <LangBlock symbol={"क"} name={"Marathi"} />
-            <Link href={"./ProfileScreen"}>
+            <Link href={"/screens/ProfileScreen"}>
               {/* <TouchableOpacity> */}
                 <LangBlock symbol={"A"} name={"English"} />
               {/* </TouchableOpacity> */}

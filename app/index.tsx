@@ -1,14 +1,14 @@
-import LangSelect from "@/screens/LangSelectScreen";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import ChatBotScreen from "./screens/ChatBotScreen";
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <LangSelect />
+      {/* <LangSelect /> */}
       {/* <ProfileScreen /> */}
       {/* <HomeScreen /> */}
-      {/* <ChatBotScreen/> */}
+      <ChatBotScreen/>
       {/* <AdvisoryPage/> */}
       {/* <ActivityCalendarScreen /> */}
       {/* <ActivityTimelineScreen/> */}

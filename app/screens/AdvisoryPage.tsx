@@ -1,8 +1,8 @@
+import AdvisoryBox from "@/components/AdvisoryBox";
+import AdvisoryPageNav from "@/components/AdvisoryPageNav";
+import AdvisoryWeatherBox from "@/components/AdvisoryWeatherBox";
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import AdvisoryBox from "../components/AdvisoryBox";
-import AdvisoryPageNav from "../components/AdvisoryPageNav";
-import AdvisoryWeatherBox from "../components/AdvisoryWeatherBox";
 
 export default function AdvisoryPage() {
   return (

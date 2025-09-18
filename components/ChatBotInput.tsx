@@ -1,8 +1,43 @@
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import axios from "axios";
+import React, { useState } from "react";
+import {
+  Alert,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
-const ChatBotInput: React.FC = () => {
+interface ChatBotInputProps {
+  onSend: (userMessage: string, botReply: string) => void;
+}
+
+const ChatBotInput: React.FC<ChatBotInputProps> = ({ onSend }) => {
+  const [query, setQuery] = useState("");
+  const [thinking, setThinking] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!query) return;
+    setThinking(true);
+
+    try {
+      const res = await axios.post("http://10.209.15.249:3000/api/chat/text", {
+        user_id: "demo_user",
+        query,
+      });
+
+      const botReply =
+        res.data?.response || "Sorry, I couldn’t understand that.";
+      onSend(query, botReply);
+      setQuery("");
+    } catch (error) {
+      Alert.alert("Error", "Error sending message to server");
+    }
+
+    setThinking(false);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -10,13 +45,19 @@ const ChatBotInput: React.FC = () => {
       </TouchableOpacity>
       <TextInput
         style={styles.input}
+        value={query}
+        onChangeText={setQuery}
         placeholder="Type a message..."
         placeholderTextColor="#999"
       />
       <TouchableOpacity>
         <Ionicons name="mic" size={28} color="#6cc070" />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.sendBtn}>
+      <TouchableOpacity
+        style={styles.sendBtn}
+        onPress={handleSubmit}
+        disabled={thinking}
+      >
         <Ionicons name="send" size={22} color="white" />
       </TouchableOpacity>
     </View>

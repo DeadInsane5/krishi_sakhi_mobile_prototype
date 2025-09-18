@@ -1,7 +1,7 @@
+import ActivityCreateBar from "@/components/ActivityCreateBar";
+import ActivityForm from "@/components/ActivityForm";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import ActivityCreateBar from "../components/ActivityCreateBar";
-import ActivityForm from "../components/ActivityForm";
 
 const ActivityCreateScreen: React.FC = () => {
   return (

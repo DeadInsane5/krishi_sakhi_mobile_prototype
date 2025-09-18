@@ -1,7 +1,8 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import axios from "axios";
+import { Link } from "expo-router";
 import React, { useState } from "react";
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const ProfileForm: React.FC = () => {
@@ -117,9 +118,9 @@ const ProfileForm: React.FC = () => {
                 </View>
 
                 {/* Create Button */}
-                <TouchableOpacity style={styles.button} onPress={() => handleSubmit()}>
+                <Link href={"/screens/HomeScreen"} style={styles.button} onPress={() => handleSubmit()}>
                     <Text style={styles.buttonText}>Create</Text>
-                </TouchableOpacity>
+                </Link>
             </View>
         </SafeAreaView>
     );

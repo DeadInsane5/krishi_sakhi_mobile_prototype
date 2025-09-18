@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import ActivityCalendarBar from "./ActivityCalendarBar";
@@ -33,15 +34,19 @@ const ActivityCalendar = () => {
   return (
     <View style={styles.container}>
       <ActivityCalendarBar />
-      {weeks.map((week, rowIndex) => (
-        <View key={rowIndex} style={styles.weekRow}>
-          {week.map((day, colIndex) => (
-            <View key={colIndex} style={styles.dayCell}>
-              {day ? <Text style={styles.dateText}>{day}</Text> : null}
-            </View>
-          ))}
-        </View>
+      <Link href={"/screens/ActivityTimelineScreen"}>
+
+        {weeks.map((week, rowIndex) => (
+          <View key={rowIndex} style={styles.weekRow}>
+            {week.map((day, colIndex) => (
+              <View key={colIndex} style={styles.dayCell}>
+                {day ? <Text style={styles.dateText}>{day}</Text> : null}
+              </View>
+            ))}
+          </View>
       ))}
+        </Link>
+
     </View>
   );
 };

@@ -1,30 +1,39 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
-type Feature = {
-  name: string;
-  icon: keyof typeof Ionicons.glyphMap;
-};
-
-const features: Feature[] = [
-  { name: "Advice", icon: "school" },
-  { name: "My Activities", icon: "book" },
-  { name: "Reminders", icon: "notifications" },
-  { name: "Prices", icon: "stats-chart" },
-  { name: "Knowledge", icon: "library" },
-  { name: "Weather", icon: "cloud" },
-];
+import { Link } from "expo-router";
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const FeatureGrid: React.FC = () => {
   return (
     <View style={styles.grid}>
-      {features.map((item, index) => (
-        <TouchableOpacity key={index} style={styles.box}>
-          <Ionicons name={item.icon} size={32} color="black" />
-          <Text style={styles.featureText}>{item.name}</Text>
+      <Link href="/screens/AdvisoryPage" asChild style={styles.box}>
+        <TouchableOpacity>
+          <Ionicons name="school" size={32} color="black" />
+          <Text style={styles.featureText}>Advice</Text>
         </TouchableOpacity>
-      ))}
+      </Link>
+      <Link href="/screens/ActivityCalendarScreen" asChild style={styles.box}>
+        <TouchableOpacity>
+          <Ionicons name="book" size={32} color="black" />
+          <Text style={styles.featureText}>My Activities</Text>
+        </TouchableOpacity>
+      </Link>
+      <TouchableOpacity style={styles.box}>
+        <Ionicons name="notifications" size={32} color="black" />
+        <Text style={styles.featureText}>Reminders</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.box}>
+        <Ionicons name="stats-chart" size={32} color="black" />
+        <Text style={styles.featureText}>Prices</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.box}>
+        <Ionicons name="library" size={32} color="black" />
+        <Text style={styles.featureText}>Knowledge</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.box}>
+        <Ionicons name="cloud" size={32} color="black" />
+        <Text style={styles.featureText}>Weather</Text>
+      </TouchableOpacity>
     </View>
   );
 };
