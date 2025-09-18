@@ -20,7 +20,7 @@ const ChatBotScreen: React.FC = () => {
     ]);
 
     try {
-      const res = await fetch("http://10.209.15.249:5000/api/chat/text", {
+      const res = await fetch("http://10.209.15.249:3000/api/chat/text", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: "demoUser", query: userMessage }),
@@ -32,6 +32,8 @@ const ChatBotScreen: React.FC = () => {
         ...prev,
         { id: Date.now().toString() + "-b", sender: "bot", text: data.reply },
       ]);
+      console.log("Data reply: ", data.reply);
+      
     } catch (err) {
       console.error("❌ Bot error:", err);
     }
