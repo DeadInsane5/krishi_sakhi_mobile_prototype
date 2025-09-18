@@ -1,16 +1,16 @@
-import ActivityCalendarScreen from "@/screens/ActivityCalendarScreen";
+import LangSelect from "@/screens/LangSelectScreen";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      {/* <LangSelect /> */}
+      <LangSelect />
       {/* <ProfileScreen /> */}
       {/* <HomeScreen /> */}
       {/* <ChatBotScreen/> */}
       {/* <AdvisoryPage/> */}
-      <ActivityCalendarScreen />
+      {/* <ActivityCalendarScreen /> */}
       {/* <ActivityTimelineScreen/> */}
       {/* <ActivityCreateScreen /> */}
     </SafeAreaProvider>
