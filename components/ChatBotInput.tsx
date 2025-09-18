@@ -3,8 +3,6 @@ import React from "react";
 import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 
 const ChatBotInput: React.FC = () => {
-  
-
   return (
     <View style={styles.container}>
       <TouchableOpacity>

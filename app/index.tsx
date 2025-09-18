@@ -1,16 +1,18 @@
-import ChatBotScreen from "@/screens/ChatBotScreen";
+import ActivityCalendarScreen from "@/screens/ActivityCalendarScreen";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      {/* <HomeScreen /> */}
-      {/* <Chatbot /> */}
-      {/* <ChatBotBox /> */}
-      {/* <AdvisoryPage/> */}
+      {/* <LangSelect /> */}
       {/* <ProfileScreen /> */}
-      <ChatBotScreen/>
+      {/* <HomeScreen /> */}
+      {/* <ChatBotScreen/> */}
+      {/* <AdvisoryPage/> */}
+      <ActivityCalendarScreen />
+      {/* <ActivityTimelineScreen/> */}
+      {/* <ActivityCreateScreen /> */}
     </SafeAreaProvider>
   );
 };

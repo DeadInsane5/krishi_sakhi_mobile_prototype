@@ -1,6 +1,6 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -14,18 +14,18 @@ const ProfileForm: React.FC = () => {
 
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const res = await axios.get("http://10.209.15.249:3000/api/profile");
-                setUsers(res.data);
-            } catch (error) {
-                console.log("error fetching users", error);
-                Alert.alert("Error fetching users");
-            };
-        };
-        fetchUsers();
-    }, []);
+    // useEffect(() => {
+    //     const fetchUsers = async () => {
+    //         try {
+    //             const res = await axios.get("http://10.209.15.249:3000/api/profile");
+    //             setUsers(res.data);
+    //         } catch (error) {
+    //             console.log("error fetching users", error);
+    //             Alert.alert("Error fetching users");
+    //         };
+    //     };
+    //     fetchUsers();
+    // }, []);
 
     const handleSubmit = async () => {
         setLoading(true);
