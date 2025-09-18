@@ -1,13 +1,14 @@
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const ActivityCreateBar: React.FC = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <Link href={"/screens/ActivityTimelineScreen"}>
         <Ionicons name="arrow-back" size={24} color="black" />
-      </TouchableOpacity>
+      </Link >
 
       <Text style={styles.title}>Create Task</Text>
 

@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -12,9 +13,9 @@ const ProfileBar: React.FC<ProfileBarProps> = ({ title, onBack, onMicPress }) =>
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
-                <TouchableOpacity onPress={onBack}>
+                <Link href={"/screens/LangSelectScreen"} onPress={onBack}>
                     <Ionicons name="chevron-back" size={24} color="black" />
-                </TouchableOpacity>
+                </Link>
                 <Text style={styles.title}>{title}</Text>
             </View>
             <TouchableOpacity onPress={onMicPress}>

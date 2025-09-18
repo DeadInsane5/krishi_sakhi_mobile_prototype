@@ -1,9 +1,9 @@
+import FeatureGrid from "@/components/BoxHome";
+import ChatBot from "@/components/ChatHome";
+import Header from "@/components/HomeBar";
+import News from "@/components/NewsHome";
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import FeatureGrid from "../components/BoxHome";
-import ChatBot from "../components/ChatHome";
-import Header from "../components/HomeBar";
-import News from "../components/NewsHome";
 
 const HomeScreen: React.FC = () => {
   return (

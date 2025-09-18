@@ -1,7 +1,7 @@
 import LangBlock from "@/components/LangBlock";
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 
 
 export default function LangSelect() {
@@ -16,7 +16,11 @@ export default function LangSelect() {
           </View>
           <View style={styles.containerCol}>
             <LangBlock symbol={"क"} name={"Marathi"} />
-            <LangBlock symbol={"A"} name={"English"} />
+            <Link href={"/screens/ProfileScreen"}>
+              {/* <TouchableOpacity> */}
+                <LangBlock symbol={"A"} name={"English"} />
+              {/* </TouchableOpacity> */}
+            </Link>
           </View>
         </View>
       </View>

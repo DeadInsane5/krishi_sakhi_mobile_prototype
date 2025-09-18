@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import ActivityTimelineBar from "./ActivityTimelineBar";
@@ -26,9 +27,11 @@ const ActivityTimeline = () => {
           </View>
 
           {/* Right side: activity */}
-          <View style={styles.rightColumn}>
-            <Text style={styles.activity}>{item.activity}</Text>
-          </View>
+          <Link href={"/screens/ActivityCreateScreen"}>
+            <View style={styles.rightColumn}>
+              <Text style={styles.activity}>{item.activity}</Text>
+            </View>
+          </Link>
         </View>
       ))}
     </View>

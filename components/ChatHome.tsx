@@ -1,12 +1,13 @@
-import React from "react";
-import { TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
+import React from "react";
+import { StyleSheet } from "react-native";
 
 const ChatBot: React.FC = () => {
   return (
-    <TouchableOpacity style={styles.chatButton}>
+    <Link href={"/screens/ChatBotScreen"} style={styles.chatButton}>
       <Ionicons name="person-circle" size={36} color="white" />
-    </TouchableOpacity>
+    </Link>
   );
 };
 
